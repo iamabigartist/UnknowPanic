@@ -55,7 +55,7 @@ namespace UnknownPanic.Players
 
         void Update()
         {
-            // cur_time = 25f - Time.time % 25f;
+            cur_time = 25f - Time.time % 25f;
 
             switch (alarm_level)
             {
@@ -67,7 +67,7 @@ namespace UnknownPanic.Players
                     }
                 case 1:
                     {
-                        time_text.text = $"{cur_time} s".AddColorToText( Color.red );
+                        time_text.text = $"{cur_time} s".COLOR( Color.red );
                         var cur_alpha = blink( cur_time, 0.01f + Mathf.Pow( cur_time, 0.6f ) / 20f );
                         if (cur_alpha > 0.5f && !audio_button)
                         {
@@ -80,14 +80,14 @@ namespace UnknownPanic.Players
                         }
                         var cur_color = Color.red;
                         cur_color.a = cur_alpha;
-                        indicator_text.text = normal_indicators.AddColorToText( cur_color );
+                        indicator_text.text = normal_indicators.COLOR( cur_color );
                         break;
                     }
                 case 2:
                     {
-                        // time_text.text = $"{cur_time} s".AddColorToText( Color.red );
+                        // time_text.text = $"{cur_time} s".ColorRT( AddColorTag.red );
                         time_text.text = "";
-                        indicator_text.text = horror_indicator.AddColorToText( Color.red );
+                        indicator_text.text = horror_indicator.COLOR( Color.red ).BOLD();
                         break;
                     }
             }

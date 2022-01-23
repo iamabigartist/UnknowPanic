@@ -45,7 +45,7 @@ namespace UnknownPanic.Datas
             Ammo,
             San
         }
-        int[] m_states;
+        public int[] m_states;
         public Escaper(PlayerIdentity playerIdentity, int health, int stamina, int ammo, int san) : base( playerIdentity )
         {
             m_states = new int[4] { health, stamina, ammo, san };
@@ -53,7 +53,7 @@ namespace UnknownPanic.Datas
     }
     public class Consoler : PlayerInfo
     {
-        List<StoryEvent> cur_cards_pool;
+        public List<StoryEvent> cur_cards_pool;
         public Consoler(PlayerIdentity playerIdentity) : base( playerIdentity )
         {
             cur_cards_pool = new List<StoryEvent>();

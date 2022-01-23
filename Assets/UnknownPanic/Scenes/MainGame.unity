@@ -781,7 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cur_time: 20
   alarm_1_time: 15
-  alarm_2_time: 3
+  alarm_2_time: 1
   normal_indicators: "\u8DDD\u79BB\u4E0B\u4E00\u6B21\u8FDB\u653B\u8FD8\u6709"
   horror_indicator: "\u4ED6\u4EEC\u6765\u4E86"
   m_stepTimer:
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 426656131}
   m_HandleRect: {fileID: 426656130}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2113,8 +2113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ad9690062590748a4bb84f170adfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: 
-  is_focused: 0
 --- !u!1 &1252323190
 GameObject:
   m_ObjectHideFlags: 0

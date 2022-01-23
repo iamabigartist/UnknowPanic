@@ -29,7 +29,7 @@ namespace UnknownPanic.Tests
         {
             m_color = EditorGUILayout.ColorField( m_color );
             color_html_hex = ColorUtility.ToHtmlStringRGBA( m_color );
-            rich_text = plain_text.ReplaceSubstring( (str) => str.AddColorToText( m_color ), 9, 6 );
+            rich_text = plain_text.ReplaceSubstring( (str) => str.COLOR( m_color ), 9, 6 );
             EditorGUILayout.LabelField( $"color: {color_html_hex}" );
             GUILayout.Label( $"rich text: {rich_text}", label_style );
         }

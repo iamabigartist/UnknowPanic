@@ -1,49 +1,72 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+using UnityEditor;
+using UnityEngine;
+using static UnknownPanic.Utils.UIUtils;
 namespace UnknownPanic.Datas.Events
 {
+    public enum ResultCommandType
+    {
+        EscaperStateChange,
+        StoryUnlock
+    }
+
     [Serializable]
     public class ResultCommandContainer
     {
-        static Dictionary<string, Type> command_type_dict;
+        public static Dictionary<ResultCommandType, int> FieldCounts;
+        public static Dictionary<ResultCommandType, Action<Rect, SerializedProperty>> GUIInput_methods;
+        public static Dictionary<ResultCommandType, Action<ResultCommandContainer, GlobalState>> Execute_methods;
+        static void DrawPropertyList(Rect position, SerializedProperty property, string[] field_names)
+        {
+            DrawGridUIs( position, 1, field_names.Length, field_names,
+                (m_rect, i, name) =>
+                {
+                    EditorGUI.PropertyField( m_rect, property.FindPropertyRelative( name ) );
+                } );
+        }
         static ResultCommandContainer()
         {
-            command_type_dict = new Dictionary<string, Type>();
-            foreach (var child_class in
-                     Assembly.GetAssembly( typeof(ResultCommand) ).GetTypes().
-                         Where( child_class =>
-                             child_class.IsClass && !child_class.IsAbstract &&
-                             child_class.IsSubclassOf( typeof(ResultCommand) ) ))
+            FieldCounts = new Dictionary<ResultCommandType, int>();
+            GUIInput_methods = new Dictionary<ResultCommandType, Action<Rect, SerializedProperty>>();
+            Execute_methods = new Dictionary<ResultCommandType, Action<ResultCommandContainer, GlobalState>>();
+
+            FieldCounts[ResultCommandType.EscaperStateChange] = 4;
+            GUIInput_methods[ResultCommandType.EscaperStateChange] = (rect, property) =>
             {
-                command_type_dict[child_class.Name] = child_class;
-            }
+                DrawPropertyList( rect, property, new[]
+                {
+                    nameof(command_type),
+                    nameof(player_alias),
+                    nameof(state_type),
+                    nameof(change_value)
+                } );
+            };
+            Execute_methods[ResultCommandType.EscaperStateChange] = (container, state) =>
+            {
+                ((Escaper)state.m_playerInfos
+                        [(int)container.player_alias]).
+                    m_states[(int)container.state_type] += container.change_value;
+            };
+
+            FieldCounts[ResultCommandType.StoryUnlock] = 2;
+            GUIInput_methods[ResultCommandType.StoryUnlock] = (rect, property) =>
+            {
+                DrawPropertyList( rect, property, new[]
+                {
+                    nameof(command_type),
+                    nameof(story_name)
+                } );
+            };
+
         }
-        public Type cur_command_type;
-        public ResultCommand cur_command;
-    }
 
-    [Serializable]
-    public abstract class ResultCommand
-    {
-        public abstract void Execute(GlobalState globalState);
-    }
+        public ResultCommandType command_type;
 
-    [Serializable]
-    public class EscaperStateChangeCommand : ResultCommand
-    {
-        public PlayerAlias effected_player;
+        public PlayerAlias player_alias;
         public Escaper.StateType state_type;
         public int change_value;
-        public override void Execute(GlobalState globalState) { }
-    }
-
-    [Serializable]
-    public class StoryUnlockCommand : ResultCommand
-    {
-        public string unlock_name;
-        public override void Execute(GlobalState globalState) { }
+        public string story_name;
     }
 
 

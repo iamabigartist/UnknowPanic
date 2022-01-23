@@ -5,8 +5,8 @@ namespace UnknownPanic.Datas
     public class GlobalState
     {
 
-        PlayerIdentity[] m_knowledges;
-        PlayerInfo[] m_playerInfos;
+        public PlayerIdentity[] m_knowledges;
+        public PlayerInfo[] m_playerInfos;
 
         public GlobalState() { }
 
