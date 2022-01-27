@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace UnknownPanic.Utils
+namespace MUtils
 {
     public static class RandomUtils
     {

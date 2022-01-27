@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Reflection;
 using UnityEditor;
-namespace UnknownPanic.Utils
+namespace MUtils
 {
     public static class ReflectionUtils
     {

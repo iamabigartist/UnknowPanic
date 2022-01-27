@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Game_UnknownPanic.Datas.Objects;
 using UnityEditor;
 using UnityEngine;
-using static UnknownPanic.Utils.UIUtils;
-namespace UnknownPanic.Datas.Events
+using static Game_UnknownPanic.Rules.GlobalRule;
+using static MUtils.UIUtils;
+namespace Game_UnknownPanic.Datas.Events
 {
     public enum ResultCommandType
     {

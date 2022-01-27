@@ -1,5 +1,5 @@
 ﻿using System;
-namespace UnknownPanic.Utils
+namespace MUtils
 {
     [Serializable]
     public class StepTimer

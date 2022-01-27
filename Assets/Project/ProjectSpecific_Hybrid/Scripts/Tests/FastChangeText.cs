@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-namespace UnknownPanic.Tests
+namespace ProjectSpecific_Hybrid.Tests
 {
     public class FastChangeText : MonoBehaviour
     {

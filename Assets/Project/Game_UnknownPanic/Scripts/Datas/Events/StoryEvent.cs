@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-namespace UnknownPanic.Datas.Events
+namespace Game_UnknownPanic.Datas.Events
 {
     [Serializable]
     public abstract class StoryEvent : ScriptableObject

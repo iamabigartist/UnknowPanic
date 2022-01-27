@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace UnknownPanic.Managers
+namespace ProjectSpecific_Hybrid.Managers
 {
     public class ConsoleManager : MonoBehaviour
     {

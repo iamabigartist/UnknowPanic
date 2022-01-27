@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace UnknownPanic.Players
+namespace ProjectSpecific_Hybrid.Players
 {
     public class GameStatePlayer : MonoBehaviour
     {

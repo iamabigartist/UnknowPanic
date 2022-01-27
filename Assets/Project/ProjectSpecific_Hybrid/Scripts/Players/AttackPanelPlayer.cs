@@ -1,8 +1,8 @@
+using MUtils;
 using UnityEngine;
 using UnityEngine.UI;
-using UnknownPanic.Utils;
-using static UnknownPanic.Utils.AnimationUtils;
-namespace UnknownPanic.Players
+using static MUtils.AnimationUtils;
+namespace ProjectSpecific_Hybrid.Players
 {
     public class AttackPanelPlayer : MonoBehaviour
     {

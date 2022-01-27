@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-namespace UnknownPanic.Tests
+namespace ProjectSpecific_Hybrid.Tests
 {
     [Serializable]
     public class Mammal

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-namespace UnknownPanic.Players
+namespace ProjectSpecific_Hybrid.Players
 {
     [Flags]
     public enum Accessor

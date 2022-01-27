@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-namespace UnknownPanic.Utils
+namespace MUtils
 {
     public static class UIUtils
     {

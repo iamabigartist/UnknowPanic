@@ -1,42 +1,17 @@
 using System.Collections.Generic;
-using UnknownPanic.Datas.Events;
-namespace UnknownPanic.Datas
+using Game_UnknownPanic.Datas.Events;
+using static Game_UnknownPanic.Rules.GlobalRule;
+namespace Game_UnknownPanic.Datas.Objects
 {
-    public enum PlayerAlias
-    {
-        A, B, C
-    }
 
-    public enum KnowledgeType
-    {
-        A,
-        B,
-        C,
-        A_B,
-        B_A,
-        A_B_A,
-        B_A_B
-    }
 
-    public class Knowledge
-    {
-        public KnowledgeType m_knowledgeType;
-        public PlayerIdentity m_referringPlayerIdentity;
-    }
-
-    public enum PlayerIdentity
-    {
-        Lamb,
-        Wolf
-    }
-
-    public abstract class PlayerInfo
+    public abstract class Player
     {
         public PlayerIdentity m_playerIdentity;
-        protected PlayerInfo(PlayerIdentity playerIdentity) { m_playerIdentity = playerIdentity; }
+        protected Player(PlayerIdentity playerIdentity) { m_playerIdentity = playerIdentity; }
     }
 
-    public class Escaper : PlayerInfo
+    public class Escaper : Player
     {
         public enum StateType
         {
@@ -51,15 +26,13 @@ namespace UnknownPanic.Datas
             m_states = new int[4] { health, stamina, ammo, san };
         }
     }
-    public class Consoler : PlayerInfo
+    public class Consoler : Player
     {
         public List<StoryEvent> cur_cards_pool;
         public Consoler(PlayerIdentity playerIdentity) : base( playerIdentity )
         {
             cur_cards_pool = new List<StoryEvent>();
         }
-
-
     }
 
 }

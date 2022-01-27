@@ -1,4 +1,4 @@
-﻿namespace UnknownPanic.Utils
+﻿namespace MUtils
 {
     public static class AnimationUtils
     {
