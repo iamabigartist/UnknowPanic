@@ -2,9 +2,9 @@ using MUtils;
 using UnityEngine;
 using UnityEngine.UI;
 using static MUtils.AnimationUtils;
-namespace ProjectSpecific_Hybrid.Players
+namespace ProjectSpecific_Hybrid.Binders
 {
-    public class AttackPanelPlayer : MonoBehaviour
+    public class AttackPanelBinder : MonoBehaviour
     {
 
         public float cur_time;

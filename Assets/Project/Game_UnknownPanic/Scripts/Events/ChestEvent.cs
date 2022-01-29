@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-namespace Game_UnknownPanic.Datas.Events
+namespace Game_UnknownPanic.Events
 {
     [Serializable]
     [CreateAssetMenu]

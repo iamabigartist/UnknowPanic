@@ -1,7 +1,7 @@
 using UnityEngine;
-namespace ProjectSpecific_Hybrid.Players
+namespace ProjectSpecific_Hybrid.Binders
 {
-    public class TaskPanelPlayer : MonoBehaviour
+    public class GameStateBinder : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

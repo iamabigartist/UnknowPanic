@@ -18,7 +18,6 @@
         {
             A,
             B,
-            C,
             A_B,
             B_A,
             A_B_A,
@@ -48,6 +47,11 @@
         {
             Me,
             TheOther
+        }
+
+        public static PlayerIdentity InvId(PlayerIdentity identity)
+        {
+            return (PlayerIdentity)(identity == 0 ? 1 : 0);
         }
 
         public static DeadPerson? GetDeadPerson(PlayerAlias me, PlayerAlias? dead_player)

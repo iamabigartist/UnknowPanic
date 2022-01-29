@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Game_UnknownPanic.Datas.Objects;
+using Game_UnknownPanic.GameProcess;
+using Game_UnknownPanic.Objects;
 using UnityEditor;
 using UnityEngine;
+using static Game_UnknownPanic.Rules.EscaperRules;
 using static Game_UnknownPanic.Rules.GlobalRule;
 using static MUtils.UIUtils;
-namespace Game_UnknownPanic.Datas.Events
+namespace Game_UnknownPanic.Events
 {
     public enum ResultCommandType
     {
@@ -40,15 +42,15 @@ namespace Game_UnknownPanic.Datas.Events
                 {
                     nameof(command_type),
                     nameof(player_alias),
-                    nameof(state_type),
+                    nameof(EscaperStateType),
                     nameof(change_value)
                 } );
             };
             Execute_methods[ResultCommandType.EscaperStateChange] = (container, state) =>
             {
                 ((Escaper)state.m_playerInfos
-                        [(int)container.player_alias]).
-                    m_states[(int)container.state_type] += container.change_value;
+                        [container.player_alias]).
+                    m_states[container.EscaperStateType] += container.change_value;
             };
 
             FieldCounts[ResultCommandType.StoryUnlock] = 2;
@@ -66,7 +68,7 @@ namespace Game_UnknownPanic.Datas.Events
         public ResultCommandType command_type;
 
         public PlayerAlias player_alias;
-        public Escaper.StateType state_type;
+        public EscaperStateType EscaperStateType;
         public int change_value;
         public string story_name;
     }

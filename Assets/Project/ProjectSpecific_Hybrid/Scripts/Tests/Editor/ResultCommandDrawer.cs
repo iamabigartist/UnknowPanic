@@ -1,4 +1,4 @@
-﻿using Game_UnknownPanic.Datas.Events;
+﻿using Game_UnknownPanic.Events;
 using UnityEditor;
 using UnityEngine;
 namespace ProjectSpecific_Hybrid

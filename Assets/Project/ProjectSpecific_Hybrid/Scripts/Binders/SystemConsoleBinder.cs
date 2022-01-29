@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-namespace ProjectSpecific_Hybrid.Players
+namespace ProjectSpecific_Hybrid.Binders
 {
     [Flags]
     public enum Accessor
@@ -21,7 +21,7 @@ namespace ProjectSpecific_Hybrid.Players
         }
     }
 
-    public class SystemConsolePlayer : MonoBehaviour
+    public class SystemConsoleBinder : MonoBehaviour
     {
     #region State
 

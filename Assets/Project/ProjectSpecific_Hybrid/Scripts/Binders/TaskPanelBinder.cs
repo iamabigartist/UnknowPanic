@@ -1,7 +1,7 @@
 using UnityEngine;
-namespace ProjectSpecific_Hybrid.Players
+namespace ProjectSpecific_Hybrid.Binders
 {
-    public class MainCanvasPlayer : MonoBehaviour
+    public class TaskPanelBinder : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
