@@ -27,4 +27,11 @@ namespace Game_UnknownPanic.GameProcess
         }
     }
 
+    [Serializable]
+    public class StoryUnlock : IGameStateCommand
+    {
+        public string StoryEvent;
+        public void Execute(ref GameState state) { }
+    }
+
 }

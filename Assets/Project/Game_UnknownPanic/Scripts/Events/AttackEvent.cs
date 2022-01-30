@@ -1,4 +1,5 @@
 ﻿using System;
+using Game_UnknownPanic.GameProcess;
 using UnityEngine;
 namespace Game_UnknownPanic.Events
 {
@@ -7,5 +8,10 @@ namespace Game_UnknownPanic.Events
     public class AttackEvent : StoryEvent
     {
         public int monster_number;
+
+        [SerializeReference]
+        [SerializeReferenceButton]
+        public IGameStateCommand[] result_commands;
+        public override void ExecuteResult() { throw new NotImplementedException(); }
     }
 }
