@@ -2,6 +2,6 @@
 {
     public class Game
     {
-        GlobalState m_globalState;
+        GameState m_gameState;
     }
 }

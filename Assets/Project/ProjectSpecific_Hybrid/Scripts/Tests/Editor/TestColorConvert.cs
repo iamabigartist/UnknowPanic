@@ -32,6 +32,7 @@ namespace ProjectSpecific_Hybrid.Tests
             rich_text = plain_text.ReplaceSubstring( (str) => str.COLOR( m_color ), 9, 6 );
             EditorGUILayout.LabelField( $"color: {color_html_hex}" );
             GUILayout.Label( $"rich text: {rich_text}", label_style );
+            GUILayout.Label( $"<b><i>asasdasd</b></i>sadasd", label_style );
         }
 
     }

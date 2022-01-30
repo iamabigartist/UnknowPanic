@@ -3,9 +3,9 @@ namespace MUtils
 {
     public static class RandomUtils
     {
-        public static int Around(int position, int radius)
+        public static int Around(float position, float radius)
         {
-            return position + Random.Range( -radius, radius );
+            return (int)(position + Random.Range( -radius, radius ));
         }
     }
 }

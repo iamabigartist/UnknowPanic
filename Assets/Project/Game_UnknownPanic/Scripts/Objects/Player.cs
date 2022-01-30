@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Game_UnknownPanic.Events;
 using static Game_UnknownPanic.Rules.EscaperRules;
-using static Game_UnknownPanic.Rules.GlobalRule;
+using static Game_UnknownPanic.Rules.GlobalRules;
 namespace Game_UnknownPanic.Objects
 {
 
