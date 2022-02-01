@@ -20,11 +20,25 @@ MonoBehaviour:
   - 
   - 
   m_list:
-  - id: 0
-  - id: 0
-  - id: 0
-  - id: 0
+  - rid: 369535547674723215
+  - rid: 369535547674723216
+  - rid: 369535547674723217
   references:
-    version: 1
-    00000000:
-      type: {class: , ns: , asm: }
+    version: 2
+    RefIds:
+    - rid: 369535547674723215
+      type: {class: EscaperStateChange, ns: Game_UnknownPanic.GameProcess, asm: Assembly-CSharp}
+      data:
+        escaper_name: 1
+        state_type: 0
+        change_value: 0
+    - rid: 369535547674723216
+      type: {class: EscaperStateChange, ns: Game_UnknownPanic.GameProcess, asm: Assembly-CSharp}
+      data:
+        escaper_name: 0
+        state_type: 0
+        change_value: 0
+    - rid: 369535547674723217
+      type: {class: StoryUnlock, ns: Game_UnknownPanic.GameProcess, asm: Assembly-CSharp}
+      data:
+        StoryEvent: 

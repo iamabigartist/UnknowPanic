@@ -346,20 +346,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mammal:
-    type_choice:
-      rid: 369535547674723206
-    m_object:
-      rid: 369535547674723207
+    rid: 369535547674723213
   references:
     version: 2
     RefIds:
-    - rid: 369535547674723206
-      type: {class: PopUpField, ns: MUtils, asm: Assembly-CSharp}
-      data:
-        choices:
-        - Cat
-        - Dog
-    - rid: 369535547674723207
+    - rid: 369535547674723213
       type: {class: Cat, ns: ProjectSpecific_Hybrid.Tests, asm: Assembly-CSharp}
       data:
         life: 0
