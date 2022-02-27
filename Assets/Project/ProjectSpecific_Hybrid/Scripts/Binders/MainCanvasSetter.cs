@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 namespace ProjectSpecific_Hybrid.Binders
 {
     public class MainCanvasSetter : MonoBehaviour
@@ -11,6 +12,7 @@ namespace ProjectSpecific_Hybrid.Binders
         public void ResetColor()
         {
             Mc = Color.red;
+            Label a = new Label();
         }
         public void DoAdd()
         {

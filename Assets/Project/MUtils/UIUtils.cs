@@ -4,6 +4,7 @@ namespace MUtils
 {
     public static class UIUtils
     {
+
         public static Rect GetPart(
             this Rect rect,
             int x_grid_count,
@@ -22,6 +23,7 @@ namespace MUtils
                 yMin = rect.y + y_i * y_step,
                 yMax = rect.y + (y_i + y_part_count) * y_step
             };
+
             return new_rect;
         }
 
@@ -34,6 +36,7 @@ namespace MUtils
             bool y_first = false)
         {
             int i = 0;
+
             if (!y_first)
             {
                 for (int y = 0; y < y_grid_count; y++)
@@ -41,6 +44,7 @@ namespace MUtils
                     for (int x = 0; x < x_grid_count; x++)
                     {
                         if (!(i < element_source.Length)) { break; }
+
                         element_drawer( position.GetPart( x_grid_count, y_grid_count, x, y ), i, element_source[i] );
                         i++;
                     }
@@ -53,6 +57,7 @@ namespace MUtils
                     for (int y = 0; y < y_grid_count; y++)
                     {
                         if (!(i < element_source.Length)) { break; }
+
                         element_drawer( position.GetPart( x_grid_count, y_grid_count, x, y ), i, element_source[i] );
                         i++;
                     }
@@ -60,5 +65,11 @@ namespace MUtils
             }
 
         }
+
+    #region Binding
+
+    #endregion
     }
+
+
 }
