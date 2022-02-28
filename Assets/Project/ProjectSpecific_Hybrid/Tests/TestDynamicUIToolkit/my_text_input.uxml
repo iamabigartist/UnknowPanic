@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:TextField picking-mode="Ignore" value="filler text" text="filler text" />
+</ui:UXML>

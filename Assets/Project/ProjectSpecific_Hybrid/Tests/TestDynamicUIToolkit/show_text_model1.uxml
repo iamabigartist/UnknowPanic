@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="try_template" src="project://database/Assets/Resources/try_template.uxml?fileID=9197481963319205126&amp;guid=1d15042f222547246abe91a55b3c8937&amp;type=3#try_template" />
+    <Style src="project://database/Assets/Project/ProjectSpecific_Hybrid/Tests/TestDynamicUIToolkit/mystyle1.uss?fileID=7433441132597879392&amp;guid=b3164cac9da18f74ab2fec9f9596f9fd&amp;type=3#mystyle1" />
+    <ui:VisualElement name="Console" focusable="false" style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; width: 100%; flex-grow: 1; height: 100%;">
+        <ui:VisualElement name="InputLine" style="flex-direction: row;">
+            <ui:Instance template="try_template" name="try_template" />
+            <ui:TextField picking-mode="Ignore" value="filler text" text="filler text" style="opacity: 1;" />
+        </ui:VisualElement>
+        <ui:Label text="Label" display-tooltip-when-elided="true" style="-unity-font: none;" />
+    </ui:VisualElement>
+</ui:UXML>
