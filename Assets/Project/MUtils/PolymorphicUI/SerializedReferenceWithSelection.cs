@@ -34,6 +34,10 @@ namespace MUtils.PolymorphicUI
 		string[] type_names;
 		int cur_choice;
 		IInstanceGenerator Generator;
+		int CurChoice(SerializedProperty property)
+		{
+			return instance_types.IndexOf(property.managedReferenceValue?.GetType());
+		}
 
 		void RefreshObject(SerializedProperty property, int type_index)
 		{
@@ -46,14 +50,14 @@ namespace MUtils.PolymorphicUI
 			EditorGUI.LabelField(position.UpPart(singleLineHeight), label);
 			var new_choice = EditorGUI.Popup(
 				position.UpPart(singleLineHeight * 2).DownPart(singleLineHeight),
-				cur_choice, type_names);
+				CurChoice(property), type_names);
 			// var new_choice = EditorGUI.Popup(
 			// 	position.UpPart(singleLineHeight),
 			// 	cur_choice, type_names);
-			if (new_choice != cur_choice)
+			if (new_choice != CurChoice(property))
 			{
-				Debug.Log($"cur: {cur_choice}, new: {new_choice}");
-				cur_choice = new_choice;
+				Debug.Log($"cur: {CurChoice(property)}, new: {new_choice}");
+				// cur_choice = new_choice;
 				RefreshObject(property, new_choice);
 			}
 			position = position.DownPart(singleLineHeight);
@@ -63,12 +67,14 @@ namespace MUtils.PolymorphicUI
 		bool inited;
 		void Init(SerializedProperty property)
 		{
-			var type = property.GetTypeFromTypename();
-			instance_types = TypeCache.GetTypesDerivedFrom(type).Where(Type => !Type.IsAbstract).ToList();
+			var parent_type = property.GetTypeFromTypename();
+			instance_types = TypeCache.GetTypesDerivedFrom(parent_type).Where(Type => !Type.IsAbstract).ToList();
 			type_names = instance_types.Select(Type => Type.Name).ToArray();
 			var atr = (SerializedReferenceWithSelectionAttribute)fieldInfo.GetCustomAttributes(false).Single(a => a is SerializedReferenceWithSelectionAttribute);
 			Generator = (IInstanceGenerator)Activator.CreateInstance(atr.InstanceGenType);
-			cur_choice = instance_types.IndexOf(type);
+			var current_type = property.managedReferenceValue?.GetType();
+			Debug.Log($"choice: {CurChoice(property)}, instance: {parent_type}, value: {property.managedReferenceValue}");
+			// cur_choice = instance_types.IndexOf(current_type);
 		}
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)

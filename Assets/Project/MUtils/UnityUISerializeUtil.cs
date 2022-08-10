@@ -7,7 +7,7 @@ namespace MUtils
 		/// Creates instance of passed type and assigns it to managed reference
 		public static void AssignNewInstanceOfTypeToManagedReference(this SerializedProperty serializedProperty, object obj)
 		{
-			serializedProperty.serializedObject.Update();
+			// serializedProperty.serializedObject.Update();
 			serializedProperty.managedReferenceValue = obj;
 			serializedProperty.serializedObject.ApplyModifiedProperties();
 		}
