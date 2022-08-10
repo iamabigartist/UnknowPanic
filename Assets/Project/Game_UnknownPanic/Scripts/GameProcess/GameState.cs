@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Game_UnknownPanic.Objects;
 using UnityEngine;
 using static Game_UnknownPanic.Rules.GlobalRules;
-using static MUtils.RandomUtils;
+using static MUtils.RandomUtil;
 namespace Game_UnknownPanic.GameProcess
 {
     public class GameState
