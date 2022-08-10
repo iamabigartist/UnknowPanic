@@ -348,47 +348,35 @@ MonoBehaviour:
   a: []
   b:
     type_choice:
-      rid: 1969982021653496585
+      rid: 1969982021653496670
     m_object:
-      rid: 1969982021653496586
+      rid: 1969982021653496671
   c:
-    rid: 1969982021653496594
-  d:
-  - rid: 1969982021653496587
-  - rid: 1969982021653496588
+    rid: 1969982021653496679
+  d: []
   references:
     version: 2
     RefIds:
-    - rid: 1969982021653496585
+    - rid: 1969982021653496670
       type: {class: PopUpField, ns: MUtils, asm: Assembly-CSharp}
       data:
         choices:
         - Cat
         - Dog
-    - rid: 1969982021653496586
+        - Dog11
+        - S1
+    - rid: 1969982021653496671
       type: {class: Cat, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
       data:
         life: 0
         fur: {r: 0, g: 0, b: 0, a: 0}
         friend: 
-    - rid: 1969982021653496587
-      type: {class: Dog, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
-      data:
-        life: 0
-        fur: {r: 0, g: 0, b: 0, a: 0}
-        master: 
-    - rid: 1969982021653496588
+    - rid: 1969982021653496679
       type: {class: Cat, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
       data:
         life: 0
         fur: {r: 0, g: 0, b: 0, a: 0}
         friend: 
-    - rid: 1969982021653496594
-      type: {class: Dog, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
-      data:
-        life: 0
-        fur: {r: 0, g: 0, b: 0, a: 0}
-        master: 
 --- !u!1 &2105776040
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +387,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2105776042}
   - component: {fileID: 2105776043}
-  - component: {fileID: 2105776044}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -435,73 +422,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mammal:
-    rid: 1969982019420815362
+    rid: 1969982021653496686
   references:
     version: 2
     RefIds:
-    - rid: 1969982019420815362
+    - rid: 1969982021653496686
       type: {class: Cat, ns: ProjectSpecific_Hybrid.Tests, asm: Assembly-CSharp}
       data:
         life: 0
         fur: {r: 0, g: 0, b: 0, a: 0}
         friend: 
---- !u!114 &2105776044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105776040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198888d66cd7476e973e8c52f7f8f04f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restrictedAnimals:
-    rid: -2
-  animalInterface:
-    rid: -2
-  animalAbstract:
-    rid: 1969982019420815373
-  animalBaseClass:
-    rid: -2
-  animalsWithInterfaces:
-  - rid: 1969982019420815363
-  - rid: 1969982019420815364
-  animalsWithInterfacesMenu:
-  - rid: -2
-  - rid: -2
-  - rid: -2
-  classWithChildReferences:
-  - integerValue: 0
-    animals:
-      rid: -2
-    animalInterfaces:
-      rid: -2
-  - integerValue: 0
-    animals:
-      rid: -2
-    animalInterfaces:
-      rid: -2
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 1969982019420815363
-      type: {class: RedInsect, ns: , asm: SerializedReferenceExample}
-      data:
-        age: 0
-        food: {fileID: 0}
-        Tag: 
-    - rid: 1969982019420815364
-      type: {class: GreenFish, ns: , asm: SerializedReferenceExample}
-      data:
-        age: 0
-        food: {fileID: 0}
-        Tag: 
-    - rid: 1969982019420815373
-      type: {class: AbstractAnimalChild, ns: , asm: AmimalWorld}
-      data:
-        age: 0
-        food: {fileID: 0}
