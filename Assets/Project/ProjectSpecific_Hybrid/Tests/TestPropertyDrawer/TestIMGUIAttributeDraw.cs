@@ -34,42 +34,19 @@ namespace ProjectSpecific_Hybrid.Tests.TestPropertyDrawer
 	public class S1 : Mammal
 	{
 		[SerializeReference]
-		[SerializedReferenceWithSelection]
+		[PolymorphicSelect]
 		public Mammal m_mammal;
 	}
 
-	public class TestAttributeDraw : MonoBehaviour
+	public class TestIMGUIAttributeDraw : MonoBehaviour
 	{
-		
-		[SerializeReference]
-		[DrawMy]
-		[Range(1, 100f)]
-		public List<Mammal> a;
+		// public PolymorphicSerializedContainer<Mammal> b;
 
-		public PolymorphicSerializedContainer<Mammal> b;
-
-		public static object GenObject(Type type)
-		{
-			return Activator.CreateInstance(type);
-		}
-
-
-		[SerializeReference]
-		[SerializedReferenceWithSelection]
+		[SerializeReference] [PolymorphicSelect]
 		public Mammal c;
 
-
-		[SerializeReference]
-		[SerializedReferenceWithSelection]
+		[SerializeReference] [PolymorphicSelect]
 		public List<Mammal> d = new();
 
-		[ContextMenu("Value Cat")]
-		void ValueCat()
-		{
-			a = new()
-			{
-				new Cat()
-			};
-		}
 	}
 }

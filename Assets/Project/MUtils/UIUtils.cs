@@ -20,7 +20,24 @@ namespace MUtils
 		}
 
 
-		public static Rect GetPart(
+		public static Rect RightPart(this Rect rect, float left_width)
+		{
+			var result = rect;
+			result.x += left_width;
+			result.width -= left_width;
+			return result;
+		}
+		
+		public static Rect LeftPart(this Rect rect, float left_width)
+		{
+			var result = rect;
+			result.width = left_width;
+			return result;
+		}
+
+
+
+		public static Rect GetGridPart(
 			this Rect rect,
 			int x_grid_count,
 			int y_grid_count,
@@ -60,7 +77,7 @@ namespace MUtils
 					{
 						if (!(i < element_source.Length)) { break; }
 
-						element_drawer(position.GetPart(x_grid_count, y_grid_count, x, y), i, element_source[i]);
+						element_drawer(position.GetGridPart(x_grid_count, y_grid_count, x, y), i, element_source[i]);
 						i++;
 					}
 				}
@@ -73,7 +90,7 @@ namespace MUtils
 					{
 						if (!(i < element_source.Length)) { break; }
 
-						element_drawer(position.GetPart(x_grid_count, y_grid_count, x, y), i, element_source[i]);
+						element_drawer(position.GetGridPart(x_grid_count, y_grid_count, x, y), i, element_source[i]);
 						i++;
 					}
 				}

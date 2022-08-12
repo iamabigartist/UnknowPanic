@@ -27,7 +27,7 @@ namespace ProjectSpecific_Hybrid.Tests
             {
                 for (int y = 0; y < row; y++)
                 {
-                    rects[i] = coordinate_rect.GetPart( layout.x, layout.y, x, y );
+                    rects[i] = coordinate_rect.GetGridPart( layout.x, layout.y, x, y );
                     GUI.Box( rects[i], $"coordinate: ({x},{y})\nrect: {rects[i]}\n{position}" );
                     EditorGUI.DrawRect( rects[i], new Color( 0.2f, 0.4f, 0.15f, 0.8f * i / count ) );
                     i++;

@@ -348,16 +348,21 @@ MonoBehaviour:
   a: []
   b:
     type_choice:
-      rid: 1969982021653496670
+      rid: 9133313480991965267
     m_object:
-      rid: 1969982021653496671
+      rid: 9133313480991965268
   c:
-    rid: 1969982021653496679
-  d: []
+    rid: 9133313480991965295
+  d:
+  - rid: 9133313480991965269
+  - rid: 9133313480991965279
+  - rid: 9133313480991965284
   references:
     version: 2
     RefIds:
-    - rid: 1969982021653496670
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 9133313480991965267
       type: {class: PopUpField, ns: MUtils, asm: Assembly-CSharp}
       data:
         choices:
@@ -365,18 +370,49 @@ MonoBehaviour:
         - Dog
         - Dog11
         - S1
-    - rid: 1969982021653496671
+    - rid: 9133313480991965268
       type: {class: Cat, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
       data:
         life: 0
         fur: {r: 0, g: 0, b: 0, a: 0}
         friend: 
-    - rid: 1969982021653496679
+    - rid: 9133313480991965269
       type: {class: Cat, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
       data:
         life: 0
         fur: {r: 0, g: 0, b: 0, a: 0}
         friend: 
+    - rid: 9133313480991965279
+      type: {class: S1, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
+      data:
+        life: 0
+        fur: {r: 0, g: 0, b: 0, a: 0}
+        m_mammal:
+          rid: -2
+    - rid: 9133313480991965284
+      type: {class: Dog11, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
+      data:
+        life: 0
+        fur: {r: 0, g: 0, b: 0, a: 0}
+        master: 
+        thought:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 9133313480991965295
+      type: {class: Dog11, ns: ProjectSpecific_Hybrid.Tests.TestPropertyDrawer, asm: Assembly-CSharp}
+      data:
+        life: 0
+        fur: {r: 0, g: 0, b: 0, a: 0}
+        master: 
+        thought:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
 --- !u!1 &2105776040
 GameObject:
   m_ObjectHideFlags: 0
