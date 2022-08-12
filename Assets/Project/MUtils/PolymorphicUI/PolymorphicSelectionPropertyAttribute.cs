@@ -55,13 +55,13 @@ namespace MUtils.PolymorphicUI
 		}
 	}
 
-	[Obsolete("Not finished")]
 	[CustomPropertyDrawer(typeof(PolymorphicSelectAttribute))]
 	public class PolymorphicSelectDrawer : PropertyDrawer
 	{
 		List<Type> instance_types;
 		string[] type_names;
 		IInstanceGenerator Generator;
+
 		int CurChoice(SerializedProperty property)
 		{
 			return instance_types.IndexOf(property.managedReferenceValue?.GetType());
@@ -83,7 +83,6 @@ namespace MUtils.PolymorphicUI
 			}
 		}
 
-
 		bool inited;
 		void Init(SerializedProperty property)
 		{
@@ -93,21 +92,17 @@ namespace MUtils.PolymorphicUI
 			var atr = (PolymorphicSelectAttribute)fieldInfo.GetCustomAttributes(false).Single(a => a is PolymorphicSelectAttribute);
 			Generator = (IInstanceGenerator)Activator.CreateInstance(atr.InstanceGenType);
 			var current_type = property.managedReferenceValue?.GetType();
-			// Debug.Log($"choice: {CurChoice(property)}, instance: {parent_type}, value: {property.managedReferenceValue}");
-			// cur_choice = instance_types.IndexOf(current_type);
+			inited = true;
 		}
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
 			return EditorGUI.GetPropertyHeight(property, label, true);
 		}
+
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			if (!inited)
-			{
-				Init(property);
-				inited = true;
-			}
+			if (!inited) { Init(property); }
 			EditorGUI.BeginProperty(position, label, property);
 			OnTypeSelectionPopUp(position, property, label);
 			EditorGUI.PropertyField(position, property, GUIContent.none, true);
